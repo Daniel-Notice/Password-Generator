@@ -143,7 +143,7 @@ function getPasswordOptions() {
     }
   } else {
     alert(
-      "Please put valid password length, which is a number no less than 8 and no more than 128!"
+      "Please enter a valid password length, which is a number no less than 8 and no more than 128!"
     );
   }
 }
