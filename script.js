@@ -87,7 +87,7 @@ var upperCasedCharacters = [
   "Y",
   "Z",
 ];
-
+//To check to see if the user meets the requirements of password length
 function isPasswordLengthInputValid(passwordInputLength) {
   if (passwordInputLength < 8) {
     return false;
