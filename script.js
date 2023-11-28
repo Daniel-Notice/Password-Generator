@@ -105,24 +105,71 @@ function isPasswordLengthInputValid(passwordInputLength) {
 }
 
 // Function to prompt user for password options
-function getPasswordOptions() {}
+function getPasswordOptions() {
+  console.log("Get password options");
+
+  const passwordLength = prompt(
+    "How long the password you want to generate (password should be At least 8 characters but no more than 128)?"
+  );
+  const passwordLengthAsNumber = parseInt(passwordLength, 10);
+
+  if (isPasswordLengthInputValid(passwordLengthAsNumber)) {
+    // ask 4 questions and check if the user say yes to at least 1 of them
+    // if the user say yes to at least 1 of then, continue
+    // otherwise alert the user that they need to choose at least 1 of them, then stop the loop
+    const isLowercaseIncluded = confirm(
+      "Do you want to include lowercase characters?"
+    );
+    const isUppercaseIncluded = confirm(
+      "Do you want to include uppercase characters?"
+    );
+    const isNumericIncluded = confirm(
+      "Do you want to include numeric characters?"
+    );
+    const isSpecialCharsIncluded = confirm(
+      "Do you want to include special characters?"
+    );
+    //checking to see what options the user chooses
+    if (
+      isLowercaseIncluded ||
+      isUppercaseIncluded ||
+      isNumericIncluded ||
+      isSpecialCharsIncluded
+    ) {
+      return password;
+    } else {
+      //if the user does not choose, then the alert below will occur.
+      alert("Please choose at least 1 character type");
+    }
+  } else {
+    alert(
+      "Please put valid password length, which is a number no less than 8 and no more than 128!"
+    );
+  }
+}
 
 // Function for getting a random element from an array
 function getRandom(arr) {}
 
 // Function to generate password with user input
-function generatePassword() {}
+function generatePassword() {
+  console.log("Generate password");
+  let finalPassword; // random password that you will generate
+  getPasswordOptions();
 
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+  return finalPassword;
+}
 
 // Write password to the #password input
 function writePassword() {
+  // main function to generate the password
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
 
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
