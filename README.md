@@ -2,7 +2,7 @@
 
 ## Description
 
-https://daniel-notice.github.io/Horiseon-Marketing-Website/
+https://daniel-notice.github.io/Password-Generator/
 
 This is a website that generates a random password based on the user's choice. The layout of the website is simple due to its layout. The user needs to click the create button to generate the password.    
 
